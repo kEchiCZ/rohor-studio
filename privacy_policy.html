@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — YouTube Smart Notifications</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
+        h1 { color: #1a1a1a; border-bottom: 2px solid #e00; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 30px; }
+        p, li { font-size: 15px; }
+        ul { padding-left: 20px; }
+        .updated { color: #888; font-size: 13px; }
+        a { color: #1a73e8; }
+    </style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="updated">Last updated: June 16, 2025 | Developer: ROHOR studio</p>
+
+<h2>1. Overview</h2>
+<p>
+    YouTube Smart Notifications ("the App") is developed by ROHOR studio.
+    This Privacy Policy explains what data the App accesses, how it is used, and your rights regarding that data.
+    We are committed to protecting your privacy.
+</p>
+
+<h2>2. Notification Access (Notification Listener Permission)</h2>
+<p>
+    The App requires the <strong>Notification Listener Service</strong> permission
+    (<code>android.permission.BIND_NOTIFICATION_LISTENER_SERVICE</code>).
+</p>
+<p>This permission is used <strong>solely</strong> to:</p>
+<ul>
+    <li>Detect when a new YouTube video upload notification arrives on your device.</li>
+    <li>Extract the video title and channel name from that notification in order to find and summarize the video.</li>
+</ul>
+<p>
+    <strong>We do not read, store, transmit, or process notifications from any other application.</strong>
+    Only notifications originating from the official YouTube app are processed.
+    No notification content is ever sent to any third-party server other than the AI summarization service you have explicitly configured (Google Gemini).
+</p>
+
+<h2>3. Data We Collect and Process</h2>
+<p>The App processes the following data locally on your device:</p>
+<ul>
+    <li><strong>YouTube notification content</strong> — video title and channel name, used only to identify the video for summarization.</li>
+    <li><strong>Video summaries</strong> — AI-generated summaries are stored locally in an on-device database (Room/SQLite).</li>
+    <li><strong>API keys</strong> — Your Google Gemini API key is stored securely on-device using Android's EncryptedSharedPreferences. It is never transmitted anywhere except directly to the respective AI provider's API.</li>
+    <li><strong>Channel subscriptions</strong> — The list of YouTube channels you add to the App is stored locally on your device only.</li>
+</ul>
+
+<h2>4. Data We Do NOT Collect</h2>
+<ul>
+    <li>We do not collect any personal identification information.</li>
+    <li>We do not use analytics, crash reporting, or advertising SDKs.</li>
+    <li>We do not share any data with third parties (except AI API calls you explicitly configure).</li>
+    <li>We do not have any backend server — there is no ROHOR studio server that receives your data.</li>
+</ul>
+
+<h2>5. Third-Party AI Service (Google Gemini)</h2>
+<p>
+    When you provide a Google Gemini API key and the App processes a video, the video URL or transcript
+    is sent to Google's Gemini API for summarization. This is subject to
+    <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.
+    You control which API key is used and can remove it at any time in Settings.
+</p>
+
+<h2>6. Internet Access</h2>
+<p>
+    The App accesses the internet solely for:
+</p>
+<ul>
+    <li>Fetching YouTube RSS feeds to check for new videos from channels you follow.</li>
+    <li>Fetching video transcripts from YouTube's public subtitle service.</li>
+    <li>Sending video data to the Google Gemini API for AI summarization.</li>
+</ul>
+
+<h2>7. Data Storage and Security</h2>
+<p>
+    All data (API keys, video history, channel list, preferences) is stored locally on your device.
+    API keys are stored using Android's <strong>EncryptedSharedPreferences</strong> (AES-256 encryption).
+    No data leaves your device except AI API calls as described in Section 5.
+</p>
+
+<h2>8. Children's Privacy</h2>
+<p>
+    This App is not directed at children under the age of 13.
+    We do not knowingly collect personal information from children.
+</p>
+
+<h2>9. Changes to This Policy</h2>
+<p>
+    We may update this Privacy Policy from time to time.
+    Any changes will be reflected by updating the "Last updated" date above.
+    Continued use of the App after changes constitutes acceptance of the updated policy.
+</p>
+
+<h2>10. Contact</h2>
+<p>
+    If you have any questions about this Privacy Policy, please contact:<br>
+    <strong>ROHOR studio</strong><br>
+    GitHub: <a href="https://github.com/kEchiCZ/YouTube-Smart-Notifications">github.com/kEchiCZ/YouTube-Smart-Notifications</a>
+</p>
+
+</body>
+</html>

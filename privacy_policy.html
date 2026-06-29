@@ -17,13 +17,14 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: June 16, 2025 | Developer: ROHOR studio</p>
+<p class="updated">Last updated: June 29, 2026 | Developer: ROHOR studio</p>
 
 <h2>1. Overview</h2>
 <p>
     YouTube Smart Notifications ("the App") is developed by ROHOR studio.
     This Privacy Policy explains what data the App accesses, how it is used, and your rights regarding that data.
-    We are committed to protecting your privacy.
+    The App has no backend server of its own; all data is stored on your device, and data is transmitted only
+    to the third-party services described below in order to provide the App's features. We are committed to protecting your privacy.
 </p>
 
 <h2>2. Notification Access (Notification Listener Permission)</h2>
@@ -39,69 +40,94 @@
 <p>
     <strong>We do not read, store, transmit, or process notifications from any other application.</strong>
     Only notifications originating from the official YouTube app are processed.
-    No notification content is ever sent to any third-party server other than the AI summarization service you have explicitly configured (Google Gemini).
+    Notification content is never sent to any third party other than the services explicitly described in Section 5.
 </p>
 
 <h2>3. Data We Collect and Process</h2>
-<p>The App processes the following data locally on your device:</p>
+<p>The App processes the following data, stored locally on your device:</p>
 <ul>
     <li><strong>YouTube notification content</strong> — video title and channel name, used only to identify the video for summarization.</li>
     <li><strong>Video summaries</strong> — AI-generated summaries are stored locally in an on-device database (Room/SQLite).</li>
-    <li><strong>API keys</strong> — Your Google Gemini API key is stored securely on-device using Android's EncryptedSharedPreferences. It is never transmitted anywhere except directly to the respective AI provider's API.</li>
-    <li><strong>Channel subscriptions</strong> — The list of YouTube channels you add to the App is stored locally on your device only.</li>
+    <li><strong>API key</strong> — The Google Gemini API key you enter is stored securely on-device using Android's EncryptedSharedPreferences (AES-256). It is transmitted only to Google's Gemini API and to no one else.</li>
+    <li><strong>Channel subscriptions</strong> — The list of YouTube channels you add or import is stored locally on your device only.</li>
 </ul>
 
 <h2>4. Data We Do NOT Collect</h2>
 <ul>
     <li>We do not collect any personal identification information.</li>
     <li>We do not use analytics, crash reporting, or advertising SDKs.</li>
-    <li>We do not share any data with third parties (except AI API calls you explicitly configure).</li>
-    <li>We do not have any backend server — there is no ROHOR studio server that receives your data.</li>
+    <li>We do not operate any backend server — there is no ROHOR studio server that receives your data.</li>
+    <li>We do not sell your data, and we do not share it with any party other than the third-party services you use to operate the App (Section 5).</li>
 </ul>
 
-<h2>5. Third-Party AI Service (Google Gemini)</h2>
-<p>
-    When you provide a Google Gemini API key and the App processes a video, the video URL or transcript
-    is sent to Google's Gemini API for summarization. This is subject to
-    <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.
-    You control which API key is used and can remove it at any time in Settings.
-</p>
-
-<h2>6. Internet Access</h2>
-<p>
-    The App accesses the internet solely for:
-</p>
+<h2>5. Third-Party Services</h2>
+<p>To provide its features, the App communicates directly with the following services from your device:</p>
 <ul>
-    <li>Fetching YouTube RSS feeds to check for new videos from channels you follow.</li>
-    <li>Fetching video transcripts from YouTube's public subtitle service.</li>
+    <li>
+        <strong>Google Gemini API</strong> — When you provide a Google Gemini API key and the App processes a video,
+        the video reference (URL/ID) and/or its transcript and metadata are sent to Google's Gemini API to generate the summary.
+        This is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.
+        You control which API key is used and can remove it at any time in Settings.
+    </li>
+    <li>
+        <strong>YouTube (public services)</strong> — The App fetches publicly available data from YouTube to identify and
+        analyze videos: channel RSS feeds (for new videos), public video pages, captions/subtitles, and video descriptions.
+    </li>
+    <li>
+        <strong>YouTube subscription import (Google Sign-In, optional)</strong> — If you choose to use "Import subscriptions",
+        the App signs you in with your Google account and requests read-only access to your YouTube subscriptions
+        (the <code>https://www.googleapis.com/auth/youtube.readonly</code> scope). Your subscription list is used
+        <strong>only</strong> to populate the App's channel list on your device. It is not stored on any server and is not
+        shared with anyone. You can revoke this access at any time at
+        <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a>.
+    </li>
+</ul>
+<p>Use of YouTube data is also subject to the <a href="https://www.youtube.com/t/terms" target="_blank">YouTube Terms of Service</a>.</p>
+
+<h2>6. Google API Services — Limited Use</h2>
+<p>
+    The App's use and transfer of information received from Google APIs (including data obtained via the
+    <code>youtube.readonly</code> scope) adheres to the
+    <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>,
+    including its Limited Use requirements. Specifically, data accessed from your Google account is used only to provide
+    user-facing features within the App (populating your channel list), is processed on your device, is not transferred to
+    others except as necessary to provide those features, and is never used for advertising.
+</p>
+
+<h2>7. Internet Access</h2>
+<p>The App accesses the internet solely for:</p>
+<ul>
+    <li>Fetching YouTube RSS feeds, video pages, captions, and descriptions to detect and analyze videos.</li>
     <li>Sending video data to the Google Gemini API for AI summarization.</li>
+    <li>Importing your YouTube subscriptions via Google Sign-In, when you choose to do so.</li>
 </ul>
 
-<h2>7. Data Storage and Security</h2>
+<h2>8. Data Storage and Security</h2>
 <p>
     All data (API keys, video history, channel list, preferences) is stored locally on your device.
     API keys are stored using Android's <strong>EncryptedSharedPreferences</strong> (AES-256 encryption).
-    No data leaves your device except AI API calls as described in Section 5.
+    No data leaves your device except the third-party calls described in Section 5.
 </p>
 
-<h2>8. Children's Privacy</h2>
+<h2>9. Children's Privacy</h2>
 <p>
     This App is not directed at children under the age of 13.
     We do not knowingly collect personal information from children.
 </p>
 
-<h2>9. Changes to This Policy</h2>
+<h2>10. Changes to This Policy</h2>
 <p>
     We may update this Privacy Policy from time to time.
     Any changes will be reflected by updating the "Last updated" date above.
     Continued use of the App after changes constitutes acceptance of the updated policy.
 </p>
 
-<h2>10. Contact</h2>
+<h2>11. Contact</h2>
 <p>
     If you have any questions about this Privacy Policy, please contact:<br>
     <strong>ROHOR studio</strong><br>
-    GitHub: <a href="https://github.com/kEchiCZ/YouTube-Smart-Notifications">github.com/kEchiCZ/YouTube-Smart-Notifications</a>
+    Email: <a href="mailto:rohor.studio@gmail.com">rohor.studio@gmail.com</a><br>
+    GitHub: <a href="https://github.com/kEchiCZ/rohor-studio">github.com/kEchiCZ/rohor-studio</a>
 </p>
 
 </body>
